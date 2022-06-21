@@ -5,10 +5,11 @@ mod yak_shave;
 use tracing;
 
 fn main() {
-    use tracing_subscriber::{fmt, EnvFilter};
+    use tracing_subscriber::{fmt, fmt::format::FmtSpan, EnvFilter};
     fmt()
         .with_max_level(tracing::Level::TRACE)
         .with_env_filter(EnvFilter::from_default_env())
+        .with_span_events(FmtSpan::FULL)
         .init();
 
     let number_of_yaks = 3;

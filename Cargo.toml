@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-tracing = { version = "0.1" } 
+tracing = { version = "0.1", features = ["log", "log-always"] } 
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # fmt examples
